@@ -2,12 +2,14 @@ pool:
   vmImage: 'ubuntu-16.04' # Hosted Ubuntu 1604
 
 stages:
-  - stage: 'Build'
+  - stage: Git
     jobs:
-      - job: Kashvi
+      - job: 'Credentials'
         steps:
-          - bash: echo "Welcome to Kashvi"
-      - job: Hari
+          - bash: 'echo This is Credentials Step'
+  - stage: Clone
+    jobs:
+      - job: 'ConePull'
         steps:
-          - bash: echo "Welcome to Hari"
+          - bash: 'echo This is Credentials Step'
 
