@@ -7,7 +7,14 @@ pool:
 
 steps:
 - task: Maven@3
-  displayName: 'Maven app/pom.xml'
   inputs:
-    mavenPomFile: 'app/pom.xml'
-    codeCoverageToolOption: Cobertura
+    mavenPomFile: 'pom.xml'
+    goals: 'clean package'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    codeCoverageToolOption: 'Cobertura'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
