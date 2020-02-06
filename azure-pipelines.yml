@@ -4,7 +4,10 @@ pool:
 stages:
   - stage: 'Build'
     jobs:
-      - job: A
+      - job: Kashvi
         steps:
-          - bash: echo "Welcome to Java Home"
+          - bash: echo "Welcome to Kashvi"
+      - job: Hari
+        steps:
+          - bash: echo "Welcome to Hari"
 
