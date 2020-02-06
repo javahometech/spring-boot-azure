@@ -19,7 +19,11 @@ stages:
               sonarQubeRunAnalysis: false
   - stage: PublishArtifacts
     jobs:
-      - job: 'ConePull'
+      - job: 'CopyFiles'
         steps:
-          - bash: 'echo This is Credentials Step'
+          - task: CopyFiles@2
+            inputs:
+              Contents: '**/*.jar'
+              TargetFolder: '$(build.artifactstagingdirectory)'
+          
 
