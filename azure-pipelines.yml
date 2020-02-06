@@ -1,11 +1,10 @@
 pool:
   vmImage: 'ubuntu-16.04' # Hosted Ubuntu 1604
 
-jobs:
-- job: 'Build'
-  steps:
-  - bash: echo "Running Build"
+stages:
+  - stage: 'Build'
+    jobs:
+      - job: A
+        steps:
+          - bash: echo "Welcome to Java Home"
 
-- job: Test
-  steps:
-  - bash: echo "Running Test"
