@@ -9,7 +9,6 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
-      
       echo $(build.artifactstagingdirectory)
 - task: Maven@3
   displayName: 'Maven app/pom.xml'
