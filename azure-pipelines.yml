@@ -25,5 +25,10 @@ stages:
             inputs:
               Contents: '**/*.jar'
               TargetFolder: '$(build.artifactstagingdirectory)'
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+              ArtifactName: 'warFile'
+              publishLocation: 'Container'
           
 
