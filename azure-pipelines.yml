@@ -23,6 +23,7 @@ stages:
         steps:
           - task: CopyFiles@2
             inputs:
+              SourceFolder: '$(System.DefaultWorkingDirectory)'
               Contents: '**/target/*.?(war|jar)'
               TargetFolder: '$(build.artifactstagingdirectory)'
           - task: PublishBuildArtifacts@1
