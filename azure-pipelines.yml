@@ -2,10 +2,10 @@ pool:
   vmImage: 'ubuntu-16.04' # Hosted Ubuntu 1604
 
 jobs:
-- job: A
+- job: 'Build'
   steps:
-  - bash: echo "A"
+  - bash: echo "Running Build"
 
-- job: B
+- job: Test
   steps:
-  - bash: echo "B"
+  - bash: echo "Running Test"
