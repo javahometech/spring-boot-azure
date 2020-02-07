@@ -3,9 +3,6 @@ trigger:
 
 variables:
 
-  # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: '4c8e7db9-7472-409e-8b5a-49c63cab73e1'
-  
   # Web app name
   webAppName: 'java-spring-boot'
 
@@ -26,7 +23,14 @@ stages:
       displayName: 'Maven Package'
       inputs:
         mavenPomFile: 'app/pom.xml'
-
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: |
+          # Write your commands here
+          echo 'Hello world - $(System.DefaultWorkingDirectory)'
+          echo 'Hello world - $(Build.ArtifactStagingDirectory)'
+        
     - task: CopyFiles@2
       displayName: 'Copy Files to artifact staging directory'
       inputs:
