@@ -15,7 +15,6 @@ stages:
       - job: "One"
         steps:
           - task: Bash@3
-            displayName: "Run Script 1"
             inputs:
-              script: |
-                echo Running Script 1
+              targetType: 'inline'
+              script: 'echo Running Script 1'
