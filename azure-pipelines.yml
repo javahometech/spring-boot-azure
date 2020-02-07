@@ -18,4 +18,4 @@ stages:
             displayName: "Run Script 1"
             inputs:
               script: |
-                echo "Running Script 1"
+                echo Running Script 1
