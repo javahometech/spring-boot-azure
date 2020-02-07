@@ -10,35 +10,12 @@ variables:
   vmImageName: 'ubuntu-latest'
 
 stages:
-- stage: Build
-  displayName: Build stage
-  jobs:
-  - job: MavenPackageAndPublishArtifacts
-    displayName: Maven Package and Publish Artifacts
-    pool:
-      vmImage: $(vmImageName)
-    
-    steps:
-    - task: Maven@3
-      displayName: 'Maven Package'
-      inputs:
-        mavenPomFile: 'app/pom.xml'
-    - task: Bash@3
-      inputs:
-        targetType: 'inline'
-        script: |
-          # Write your commands here
-          echo 'Hello world - $(System.DefaultWorkingDirectory)'
-          echo 'Hello world - $(Build.ArtifactStagingDirectory)'
-        
-    - task: CopyFiles@2
-      displayName: 'Copy Files to artifact staging directory'
-      inputs:
-        SourceFolder: $(System.DefaultWorkingDirectory)
-        Contents: '**/target/*.?(war|jar)'
-        TargetFolder: $(Build.ArtifactStagingDirectory)
-
-    - task: PublishPipelineArtifact@0
-      displayName: 'Publish pipeline artifacts'
-      inputs:
-        targetPath: $(Build.ArtifactStagingDirectory)
+  - stage: 'Build'
+    jobs:
+      - job: "One"
+        steps:
+          - task: Bash@3
+            displayName: "Run Script 1"
+            inputs:
+              script: |
+                echo "Running Script 1"
