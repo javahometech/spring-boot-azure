@@ -16,7 +16,7 @@ stages:
             testResultsFiles: '**/surefire-reports/TEST-*.xml'
             testRunTitle: 'Junit Test'
             codeCoverageToolOption: 'JaCoCo'
-            codeCoverageFailIfEmpty: true
+            codeCoverageFailIfEmpty: false
             javaHomeOption: 'JDKVersion'
             mavenVersionOption: 'Default'
             mavenAuthenticateFeed: false
