@@ -14,11 +14,4 @@ stages:
             goals: 'clean package'
             publishJUnitResults: true
             testResultsFiles: '**/surefire-reports/TEST-*.xml'
-            testRunTitle: 'Junit Test'
-            codeCoverageToolOption: 'JaCoCo'
-            codeCoverageFailIfEmpty: false
-            javaHomeOption: 'JDKVersion'
-            mavenVersionOption: 'Default'
-            mavenAuthenticateFeed: false
-            effectivePomSkip: false
-            sonarQubeRunAnalysis: false
+  - stage: 'AWS'
